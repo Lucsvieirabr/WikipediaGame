@@ -1,0 +1,44 @@
+
+html{
+    background: #396afc;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2948ff, #396afc);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.mainctx{
+    margin-top: 50px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 25px;
+    justify-content: center;
+    place-items: center;
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    font-weight: bold
+}
+
+#title{
+    text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+    font-size: 65px;
+    color:azure;
+}
+#addplayer{
+    border-radius: 15px;
+    border: none;
+    background: #F7971E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 55px;
+    width: 70%;
+    font-family: 'Fredoka One', cursive;
+    font: weight 50px;
+    color:#000;
+    font-size: x-large;
+    transition: 0.3s ease-in-out;
+}
+#addplayer:hover{
+    color: aliceblue;
+    transform: scale(1.05);
+    cursor: pointer; 
+    
+}
