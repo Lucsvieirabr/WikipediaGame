@@ -1,19 +1,16 @@
 
 html{
-    background: #396afc;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2948ff, #396afc);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: linear-gradient(to bottom right , #306BFF, #1C3E93); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+    margin: 0;
 }
 body{
-    background: url(bg.png) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background-image: url("bg-removebg-preview.png");
+    background-repeat: repeat;
+    height: inherit;
+    margin: 0;
 }
 .mainctx{
-    margin-top: 50px;
     display: grid;
     grid-template-rows: 1fr auto;
     gap: 25px;
@@ -21,7 +18,7 @@ body{
     place-items: center;
     text-align: center;
     font-family: 'Fredoka One', cursive;
-    font-weight: bold
+    font-weight: bold;
 }
 
 #title{
