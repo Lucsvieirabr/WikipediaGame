@@ -1,5 +1,9 @@
 function buttoncliked(){
-    changeState('mainctx')
+    changeState('nav')
+    let playersBox = document.getElementById('players');
+    let pdisplay = window.getComputedStyle(playersBox).display;
+    playersBox.style.display = pdisplay == 'none' ? 'grid' : 'none'
+
 }
 
 function changeState(documentID){
