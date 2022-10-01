@@ -68,10 +68,6 @@ body{
     100%{grid-template-columns: 1fr;}
 }
 
-@keyframes mainctx-close{
-    0%{grid-template-columns: 1fr;}
-    100%{grid-template-columns: 1fr;}
-}
 @keyframes title-close{
     0%{right: 25%;}
     100%{right: 0%;}
@@ -97,9 +93,6 @@ body{
 .mainctx--open>button {
     animation: button-open 0.6s linear;
     position: relative;
-}
-.mainctx--closed{
-    animation: mainctx-close 0.6s linear;
 }
 .mainctx--closed>h1{
     animation: title-close 0.6s linear;
