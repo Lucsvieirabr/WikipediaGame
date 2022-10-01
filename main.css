@@ -19,6 +19,8 @@ body{
     text-align: center;
     font-family: 'Fredoka One', cursive;
     font-weight: bold;
+    transition: display 2s, position 2s, grid-template-columns 2s, margin-left 2s,margin-top 2s;
+
 }
 
 #title{
@@ -38,11 +40,24 @@ body{
     font: weight 50px;
     color:#000;
     font-size: x-large;
-    transition: 0.3s ease-in-out;
 }
 #addplayer:hover{
     color: aliceblue;
     transform: scale(1.05);
     cursor: pointer; 
     
+}
+
+.mainctx--open{
+    transition: ease 2s;
+    position: absolute;
+    display: grid;
+    grid-template-columns: auto 52vh;
+    margin-left: 5vh;
+    margin-top: -3vh;
+    padding: 0;
+}
+.mainctx--open :nth-child(2) {
+    position: relative;
+    left: 80vh;
 }
