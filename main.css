@@ -96,6 +96,7 @@ body{
 @keyframes playerwhiteBox {
     from{
         display: none;
+        background: none;
         bottom:0;
         right:0;
         width: 0;
