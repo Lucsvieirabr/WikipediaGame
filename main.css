@@ -95,13 +95,15 @@ body{
 
 @keyframes playerwhiteBox {
     from{
-        background:none;
+        display: none;
         bottom:0;
         right:0;
         width: 0;
         height: 0;
     }
     to{
+        display: grid;
+        grid-template-columns: auto auto auto;
         background-color: aliceblue;
         width: 95vw;
         margin-left: 2.5vw;
@@ -109,29 +111,7 @@ body{
         border-radius: 15px;
     }
 }
-@keyframes playerwhiteBox2 {
-    from{
-        background-color: aliceblue;
-        width: 95vw;
-        margin-left: 2.5vw;
-        height: 84vh;
-        border-radius: 15px;
-    }
-    to{
-        background:none;
-        bottom:0;
-        left:0;
-        width: 0;
-        height: 0;
-    }
-}
-.players--closed{
-    animation-name: playerwhiteBox2;
-    animation-duration: 3s;
-}
-.players--open{
-    display: grid !important;
-}
+
 .players{
     display: none;
     grid-template-columns: auto auto auto;
