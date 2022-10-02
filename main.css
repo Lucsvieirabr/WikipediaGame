@@ -48,29 +48,35 @@ body{
 .nav--open{
     display: flex;
     flex-direction: row;
-    height: 13vh;
+    height: 15vh;
     width: 100vw;
-    gap: 38vw;
+    gap: 35vw;
     animation-name: addplayer;
-    animation-duration: 4s;
+    animation-duration: 2s;
 }
 .nav--closed{
     animation-name: addplayerclosed;
-    animation-duration: 4s;
+    animation-duration: 2s;
 }
 @keyframes addplayerclosed {
-    from {
+    0% {
         display: flex;
         flex-direction: row;
         height: 13vh;
         width: 100vw;
         gap: 38vw;
     }
-    to {
-        display: flex;
+    74%{
+        flex-direction: row;
+        gap: 20px;
+    }
+    75%{
         flex-direction: column;
-        height: 85vh;
         gap: 0;
+    }
+    100%{
+        display: flex;
+        height: 85vh;
     }
 }
 @keyframes addplayer {
@@ -81,9 +87,9 @@ body{
     to {
         display: flex;
         flex-direction: row;
-        height: 13vh;
+        height: 15vh;
         width: 100vw;
-        gap: 38vw;
+        gap: 35vw;
     }
   }
 
@@ -99,7 +105,7 @@ body{
         background-color: aliceblue;
         width: 95vw;
         margin-left: 2.5vw;
-        height: 84vh;
+        height: 80vh;
         border-radius: 15px;
     }
 }
@@ -132,9 +138,9 @@ body{
     background-color: aliceblue;
     width: 95vw;
     margin-left: 2.5vw;
-    height: 84vh;
+    height: 80vh;
     border-radius: 15px;
     animation-name: playerwhiteBox;
-    animation-duration: 4s;
+    animation-duration: 2s;
 }
 

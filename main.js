@@ -2,6 +2,7 @@ function buttoncliked(){
     changeState('nav')
     let playersBox = document.getElementById('players');
     let pdisplay = window.getComputedStyle(playersBox).display;
+<<<<<<< HEAD
     if(pdisplay == 'none'){
         playersBox.classList.add('players' + '--open')
     }else{
@@ -16,6 +17,9 @@ function buttoncliked(){
     }
 
 
+=======
+    playersBox.style.display = pdisplay == 'none' ? 'grid' : 'none'
+>>>>>>> 8a40a9f80f20d58bdc4d77c89493e33411dd7086
 }
 
 function changeState(documentID){
