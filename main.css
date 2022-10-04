@@ -113,6 +113,29 @@ body{
     }
 }
 
+@keyframes whiteBoxClossing{
+    from{
+        background-color: aliceblue;
+        width: 95vw;
+        margin-left: 2.5vw;
+        border-radius: 15px;
+        height: 80vh;
+    }
+    to{
+        background: none;
+        margin-left: 0vw;
+        width: 0vw;
+        height: 0;
+    }
+
+}
+.players--closed{
+    animation-name: whiteBoxClossing;
+    animation-duration: 2.5s;
+}
+.players--open{
+    display: grid !important;
+}
 .players{
     display: none;
     grid-template-columns: auto auto auto;
