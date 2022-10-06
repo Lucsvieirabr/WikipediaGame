@@ -152,14 +152,14 @@ body{
     margin-top: 15vh !important;
     background: none;
     border-radius: 15px;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.4), 0 8px 22px 0 rgba(0, 0, 0, 0.3);
     height: 43vh;
 }
 .gradientBgPlayer{
     display: flex;
     background: linear-gradient(to bottom right , #306BFF, #1C3E93); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     width: 15vw;
-    height: 13vh;
+    height: 14vh;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     justify-content: center;
@@ -179,7 +179,7 @@ body{
     height: 30vh;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-image: url("playerWhitebg.png");
+    background-image: url("playerCardBg.png");
     background-repeat: repeat;
 
 }
