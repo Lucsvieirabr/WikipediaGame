@@ -2,12 +2,32 @@ let isAnimating = false;
 function buttoncliked(){
     let divIsEmpety = checkPlayersDiv()
     if(isAnimating){return}
-    //if(divIsEmpety){
-      //  changeState('nav')
-        //whiteBoxAnimationController('players')
-   // }
-   changeState('nav')
-   whiteBoxAnimationController('players')
+    if(divIsEmpety){
+        changeState('nav')
+        whiteBoxAnimationController('players')
+    }
+    addPlayer()
+}
+
+function createPlayer(){
+    let div = document.createElement('div')
+    let gradientBgPlayer = document.createElement('div')
+    let profilePic = document.createElement('div')
+    let footer = document.createElement('div')
+    gradientBgPlayer.classList.add('gradientBgPlayer')
+    profilePic.classList.add('profileGradient')
+    gradientBgPlayer.appendChild(profilePic)
+    footer.classList.add('footer')
+    div.appendChild(gradientBgPlayer)
+    div.appendChild(footer)
+    return div
+}
+function addPlayer(){
+    let playerCard = createPlayer();
+    let playerDiv = document.createElement('div')
+    playerDiv.classList.add('player')
+    playerDiv.appendChild(playerCard);
+    document.getElementById('players').appendChild(playerDiv)
 }
 
 function checkPlayersDiv(){
