@@ -1,10 +1,21 @@
 let isAnimating = false;
 function buttoncliked(){
-    if(!isAnimating){
-        changeState('nav')
-        whiteBoxAnimationController('players')
-    }
+    let divIsEmpety = checkPlayersDiv()
+    if(isAnimating){return}
+    //if(divIsEmpety){
+      //  changeState('nav')
+        //whiteBoxAnimationController('players')
+   // }
+   changeState('nav')
+   whiteBoxAnimationController('players')
 }
+
+function checkPlayersDiv(){
+    var element = document.getElementById("players");
+    var numberOfChildren = element.childElementCount
+    return numberOfChildren == 0
+}
+
 function whiteBoxAnimationController(docId){
     let playersBox = document.getElementById(docId);
     if(playersBox.classList.contains(docId + '--open') && !isAnimating){
