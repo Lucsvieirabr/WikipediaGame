@@ -155,6 +155,7 @@ body{
     border-radius: 15px;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.4), 0 8px 22px 0 rgba(0, 0, 0, 0.3);
     height: 43vh;
+    overflow: hidden;
 }
 .gradientBgPlayer{
     display: flex;
@@ -172,7 +173,7 @@ body{
     height: 15vh;
     border: 3px solid white;
     border-radius: 50%;
-    background: linear-gradient(95deg, #f12d83, #d4ca42) ;
+    z-index: 10;
 }
 .footer{
     background: aliceblue;
@@ -182,6 +183,6 @@ body{
     border-bottom-right-radius: 15px;
     background-image: url("playerCardBg.png");
     background-repeat: repeat;
-
+    opacity: 0.1;
 }
 

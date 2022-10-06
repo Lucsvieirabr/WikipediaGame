@@ -1,4 +1,17 @@
 let isAnimating = false;
+let gradients = [
+    ["#ee9ca7", "#ffdde1"], 
+    ["#FFE000", "#799F0C"], 
+    ["#2193b0","#6dd5ed"],
+    ["#b92b27","#1565C0"],
+    ["#ffe259","#ffa751"],
+    ["#acb6e5","#86fde8"],
+    ["#9796f0", "#fbc7d4"],
+    ["#ec008c","#fc6767"],
+    ["#cc2b5e","#753a88"],
+    ["#e65c00", "#e65c00"],
+    ["#ff6e7f", "#bfe9ff"]
+]
 function buttoncliked(){
     let divIsEmpety = checkPlayersDiv()
     if(isAnimating){return}
@@ -8,7 +21,9 @@ function buttoncliked(){
     }
     addPlayer()
 }
-
+function get_random (list) {
+    return list[Math.floor((Math.random()*list.length))];
+}
 function createPlayer(){
     let div = document.createElement('div')
     let gradientBgPlayer = document.createElement('div')
@@ -16,6 +31,8 @@ function createPlayer(){
     let footer = document.createElement('div')
     gradientBgPlayer.classList.add('gradientBgPlayer')
     profilePic.classList.add('profileGradient')
+    let mygradient = get_random(gradients)
+    profilePic.style.background =`linear-gradient(to right, ${mygradient[0]}, ${mygradient[1]})`
     gradientBgPlayer.appendChild(profilePic)
     footer.classList.add('footer')
     div.appendChild(gradientBgPlayer)
