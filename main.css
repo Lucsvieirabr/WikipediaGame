@@ -186,3 +186,9 @@ body{
     opacity: 0.1;
 }
 
+.svg {
+    width: 300px;
+    position: absolute;
+    margin-left: -5vh;
+    pointer-events: none;
+}
