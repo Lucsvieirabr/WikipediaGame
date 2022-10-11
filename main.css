@@ -132,7 +132,7 @@ body{
 @keyframes gradientbg {
     from{
         background: none;
-        width: 0vw;
+        width: 15vw;
         height: 0vh;
     }
     to{
@@ -151,6 +151,26 @@ body{
         width: 7.5vw;
         height: 15vh;
         border: 3px solid white;
+    }
+}
+@keyframes footerAnim {
+    from{
+        opacity: 0;
+        height: 0vh;
+
+    }
+    to{
+        opacity: 0.1;
+        height: 30vh;
+
+    }
+}
+@keyframes playercard {
+    from{
+        height: 0vh;
+    }
+    to{
+        height: 43vh;
     }
 }
 .players--closed{
@@ -180,6 +200,8 @@ body{
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.4), 0 8px 22px 0 rgba(0, 0, 0, 0.3);
     height: 43vh;
     overflow: hidden;
+    animation-name: playercard;
+    animation-duration: 1s;
 }
 .gradientBgPlayer{
     display: flex;
@@ -212,6 +234,8 @@ body{
     background-image: url("playerCardBg.png");
     background-repeat: repeat;
     opacity: 0.1;
+    animation-name: footerAnim;
+    animation-duration: 1s;
 }
 
 .svg {
