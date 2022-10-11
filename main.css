@@ -129,6 +129,30 @@ body{
     }
 
 }
+@keyframes gradientbg {
+    from{
+        background: none;
+        width: 0vw;
+        height: 0vh;
+    }
+    to{
+        background: linear-gradient(to bottom right , #306BFF, #1C3E93); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        width: 15vw;
+        height: 14vh;
+    }
+}
+@keyframes profileGradientani {
+    from{
+        width: 0vw;
+        height: 0vh;
+        border: white;
+    }
+    to{
+        width: 7.5vw;
+        height: 15vh;
+        border: 3px solid white;
+    }
+}
 .players--closed{
     animation-name: whiteBoxClossing;
     animation-duration: 2.5s;
@@ -166,6 +190,8 @@ body{
     border-top-right-radius: 15px;
     justify-content: center;
     align-items: center;
+    animation-name: gradientbg;
+    animation-duration: 1s;
 }
 .profileGradient{
     margin-top: 15vh;
@@ -174,6 +200,8 @@ body{
     border: 3px solid white;
     border-radius: 50%;
     z-index: 10;
+    animation-name: profileGradientani;
+    animation-duration: 1s;
 }
 .footer{
     background: aliceblue;
