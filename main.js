@@ -12,6 +12,10 @@ let gradients = [
     ["#e65c00", "#e65c00"],
     ["#ff6e7f", "#bfe9ff"]
 ]
+function get_random (list) {
+    return list[Math.floor((Math.random()*list.length))];
+}
+
 function buttoncliked(){
     let divIsEmpety = checkPlayersDiv()
     if(isAnimating){return}
@@ -21,72 +25,16 @@ function buttoncliked(){
     }
     addPlayer()
 }
-function get_random (list) {
-    return list[Math.floor((Math.random()*list.length))];
-}
-function createPlayer(){
-    let div = document.createElement('div')
-    let gradientBgPlayer = document.createElement('div')
-    let profilePic = document.createElement('div')
-    let footer = document.createElement('div')
-    gradientBgPlayer.classList.add('gradientBgPlayer')
-    profilePic.classList.add('profileGradient')
-    let mygradient = get_random(gradients)
-    profilePic.style.background =`linear-gradient(to right, ${mygradient[0]}, ${mygradient[1]})`
-    gradientBgPlayer.appendChild(profilePic)
-    footer.classList.add('footer')
-    let confettiDiv = document.createElement('div')
-    confettiDiv.classList.add('svg')
-    confettiDiv.setAttribute('id', 'svg' + (getNumberOfPlayers()+ 1))
-    div.appendChild(confettiDiv)
-    div.appendChild(gradientBgPlayer)
-    div.appendChild(footer)
-    return div
-}
-function addPlayer(){
-    let divIsEmpety = checkPlayersDiv()
-    let playerCard = createPlayer();
-    let playerDiv = document.createElement('div')
-    playerDiv.classList.add('player')
-    playerDiv.appendChild(playerCard);
-    if(divIsEmpety){
-        setTimeout(()=>{
-            animationplayerAndPutOnDiv(playerDiv)
-        },2200)
-        return
+
+function changeState(documentID){
+    let element = document.getElementById(documentID);
+    if(element.classList.contains(documentID + '--open')){
+        element.classList.remove(documentID + '--open')
+        element.classList.add(documentID + '--closed')
+    }else{
+        element.classList.add(documentID + '--open')
+        element.classList.remove(documentID + '--closed')
     }
-    animationplayerAndPutOnDiv(playerDiv)
-}
-
-function getNumberOfPlayers(){
-    var element = document.getElementById("players");
-    var numberOfChildren = element.childElementCount
-    return numberOfChildren
-}
-function animationplayerAndPutOnDiv(playerDiv){
-    document.getElementById('players').appendChild(playerDiv)
-    console.log(getNumberOfPlayers())
-
-    let svgContainer = document.getElementById('svg' + getNumberOfPlayers());
-    const animItem = bodymovin.loadAnimation({
-            wrapper: svgContainer,
-            animType: 'svg',
-            loop: false,
-            autoplay: false,
-            path: 'https://assets2.lottiefiles.com/packages/lf20_u4yrau.json'
-        });
-    animItem.goToAndPlay(0,true);
-    
-    animItem.addEventListener('complete', () => {
-        svgContainer.remove();
-        
-    })
-}
-
-function checkPlayersDiv(){
-    var element = document.getElementById("players");
-    var numberOfChildren = element.childElementCount
-    return numberOfChildren == 0
 }
 
 function whiteBoxAnimationController(docId){
@@ -106,13 +54,85 @@ function whiteBoxAnimationController(docId){
             playersBox.classList.add(docId + '--open')
         }
 }
-function changeState(documentID){
-    let element = document.getElementById(documentID);
-    if(element.classList.contains(documentID + '--open')){
-        element.classList.remove(documentID + '--open')
-        element.classList.add(documentID + '--closed')
-    }else{
-        element.classList.add(documentID + '--open')
-        element.classList.remove(documentID + '--closed')
+
+function addPlayer(){
+    let divIsEmpety = checkPlayersDiv()
+    let playerDiv = getPlayerDiv()
+    if(divIsEmpety){
+        setTimeout(()=>{
+            animationplayerAndPutOnDiv(playerDiv)
+        },2200)
+        return
     }
+    animationplayerAndPutOnDiv(playerDiv)
 }
+function checkPlayersDiv(){
+    var element = document.getElementById("players");
+    var numberOfChildren = element.childElementCount
+    return numberOfChildren == 0
+}
+function getPlayerDiv(){
+    let playerCard = createPlayer();
+    let playerdiv = create_element_with_class('div', 'player')
+    playerdiv.appendChild(playerCard);
+    return playerdiv
+}
+
+function animationplayerAndPutOnDiv(playerDiv){
+    document.getElementById('players').appendChild(playerDiv)
+
+    let svgContainer = document.getElementById('svg' + getNumberOfPlayers());
+    const animItem = bodymovin.loadAnimation({
+            wrapper: svgContainer,
+            animType: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'https://assets2.lottiefiles.com/packages/lf20_u4yrau.json'
+        });
+    animItem.goToAndPlay(0,true);
+    
+    animItem.addEventListener('complete', () => {
+        svgContainer.remove();
+        
+    })
+}
+
+
+function createPlayer(){
+    let div = document.createElement('div')
+    let gradientBgPlayer = create_gradientBg_player()
+    let footer = create_element_with_class('div', 'footer')
+    let confettiDiv = create_element_with_class('div', 'svg', 'svg' + (getNumberOfPlayers()+ 1))
+    div.appendChild(confettiDiv)
+    div.appendChild(gradientBgPlayer)
+    div.appendChild(footer)
+    return div
+}
+function create_element_with_class(tagname, cssClass, id){
+    let element = document.createElement(tagname)
+    element.classList.add(cssClass)
+    if(id) element.setAttribute('id', id)
+    return element
+}
+
+function create_gradientBg_player(){
+    let gradientBg = create_element_with_class('div', 'gradientBgPlayer')
+    let profilepic = create_profile_pic()
+    gradientBg.appendChild(profilepic)
+    return gradientBg
+
+}
+function create_profile_pic(){
+    let profilepic = create_element_with_class('div', 'profileGradient')
+    let mygradient = get_random(gradients)
+    profilepic.style.background =`linear-gradient(to right, ${mygradient[0]}, ${mygradient[1]})`
+    return profilepic
+}
+
+function getNumberOfPlayers(){
+    var element = document.getElementById("players");
+    var numberOfChildren = element.childElementCount
+    return numberOfChildren
+}
+
+
