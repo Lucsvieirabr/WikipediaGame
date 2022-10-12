@@ -1,7 +1,7 @@
 
 html{
     background: linear-gradient(to bottom right , #306BFF, #1C3E93); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    height: 100vh;
+    overflow-x: hidden;
     margin: 0;
 }
 body{
@@ -13,6 +13,7 @@ body{
 .mainctx{
     font-family: 'Fredoka One', cursive;
     font-weight: bold;
+    min-height: 100vh;
 }
 .nav{
     display: flex;
@@ -50,7 +51,7 @@ body{
     flex-direction: row;
     height: 15vh;
     width: 100vw;
-    gap: 35vw;
+    gap: 30vw;
     animation-name: addplayer;
     animation-duration: 2s;
 }
@@ -184,21 +185,23 @@ body{
     display: grid !important;
 }
 .players{
+    margin-bottom: 5vh;
     display: none;
     grid-template-columns: auto auto auto auto;
     background-color: aliceblue;
     justify-content: center;
     width: 95vw;
     margin-left: 2.5vw;
-    height: 80vh;
+    min-height: 80vh;
     border-radius: 15px;
     animation-name: playerwhiteBox;
     animation-duration: 2s;
 }
 .player{
-    margin-top: 15vh !important;
-    margin: 2.5vw;
+    margin: 25px;
     background: none;
+    display: grid;
+    place-items: center;
     border-radius: 15px;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.4), 0 8px 22px 0 rgba(0, 0, 0, 0.3);
     height: 43vh;
