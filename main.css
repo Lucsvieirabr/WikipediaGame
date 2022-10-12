@@ -238,6 +238,9 @@ body{
     animation-duration: 1s;
 }
 .profileGradient{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 15vh;
     width: 7.5vw;
     height: 15vh;
@@ -246,6 +249,14 @@ body{
     z-index: 10;
     animation-name: profileGradientani;
     animation-duration: 1s;
+    text-align: center;
+}
+.profileGradient h1{
+    margin: none;
+   font-size: 3vw;
+   background: -webkit-linear-gradient(#3494E6, #EC6EAD);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
 }
 .footer{
     background: aliceblue;

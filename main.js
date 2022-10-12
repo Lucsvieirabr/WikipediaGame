@@ -1,4 +1,5 @@
 let isAnimating = false;
+let lastplayerNum = 0;
 let gradients = [
     ["#ee9ca7", "#ffdde1"], 
     ["#FFE000", "#799F0C"], 
@@ -125,8 +126,12 @@ function create_gradientBg_player(){
 }
 function create_profile_pic(){
     let profilepic = create_element_with_class('div', 'profileGradient')
+    let num = document.createElement('h1')
+    num.innerHTML = `${lastplayerNum + 1}`
+    lastplayerNum++
     let mygradient = get_random(gradients)
     profilepic.style.background =`linear-gradient(to right, ${mygradient[0]}, ${mygradient[1]})`
+    profilepic.appendChild(num)
     return profilepic
 }
 
@@ -141,6 +146,7 @@ function playerClicked(id){
     if(getNumberOfPlayers() == 0){
         changeState('nav')
         whiteBoxAnimationController('players')
+        lastplayerNum = 0
     }
 }
 
