@@ -73,7 +73,8 @@ function checkPlayersDiv(){
 }
 function getPlayerDiv(){
     let playerCard = createPlayer();
-    let playerdiv = create_element_with_class('div', 'player')
+    let playerdiv = create_element_with_class('div', 'player', 'player' + getNumberOfPlayers())
+    playerdiv.setAttribute('onclick', `playerClicked('player' + ${getNumberOfPlayers()})`)
     playerdiv.appendChild(playerCard);
     return playerdiv
 }
@@ -134,5 +135,15 @@ function getNumberOfPlayers(){
     var numberOfChildren = element.childElementCount
     return numberOfChildren
 }
+function playerClicked(id){
+    openWikiTab()
+    document.getElementById(id).remove()
+    if(getNumberOfPlayers() == 0){
+        changeState('nav')
+        whiteBoxAnimationController('players')
+    }
+}
 
-
+function openWikiTab(){
+    window.open('https://pt.wikipedia.org/wiki/Especial:Aleat%C3%B3ria').focus()
+}
