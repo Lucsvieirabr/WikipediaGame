@@ -151,5 +151,5 @@ function playerClicked(id){
 }
 
 function openWikiTab(){
-    window.open('https://pt.wikipedia.org/wiki/Especial:Aleat%C3%B3ria').focus()
+    window.open('https://pt.wikipedia.org/wiki/Especial:Aleat%C3%B3ria')
 }
