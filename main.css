@@ -28,27 +28,27 @@ body{
     display: flex;
     flex-direction: column;
     height: 85vh;
-    justify-content: center;
-    place-items: center;
+    align-items: center;
 }
 #title{
+    justify-self: left;
     text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
-    font-size: 65px;
+    font-size: 5.25vw;
     color:azure;
 }
 #addplayer{
     border-radius: 15px;
+    justify-self: right;
     border: none;
     width: fit-content;
     background: #F7971E;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    height: 55px;
+    height: fit-content;
     padding: 10px 40px;
     font-family: 'Fredoka One', cursive;
-    font: weight 50px;
+    font-size: 25px;
     color:#000;
-    font-size: x-large;
     transition: 0.5s ease-in-out;
 }
 #addplayer:hover{
@@ -57,11 +57,13 @@ body{
     cursor: pointer; 
 }
 .nav--open{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 15vh;
+    padding: 0 25px;
     height: 15vh;
+    box-sizing: border-box;
     width: 100vw;
-    gap: 30vw;
     animation-name: addplayer;
     animation-duration: 2s;
 }
@@ -192,13 +194,14 @@ body{
     animation-duration: 2.5s;
 }
 .players--open{
-    display: grid !important;
+    display: flex !important;
 }
 .players{
     margin-bottom: 5vh;
     display: none;
     grid-template-columns: auto auto auto auto;
     background-color: aliceblue;
+    flex-wrap: wrap;
     justify-content: center;
     width: 95vw;
     margin-left: 2.5vw;
@@ -209,7 +212,7 @@ body{
 }
 .player{
     margin: 25px;
-    margin-top: 13.5vh;
+    width: fit-content;
     background: none;
     display: grid;
     place-items: center;
@@ -229,7 +232,7 @@ body{
 .gradientBgPlayer{
     display: flex;
     background: linear-gradient(to bottom right , #306BFF, #1C3E93); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    width: 15vw;
+    width: 200px;
     height: 14vh;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -243,8 +246,8 @@ body{
     justify-content: center;
     align-items: center;
     margin-top: 15vh;
-    width: 7.5vw;
-    height: 15vh;
+    width: 100px;
+    height: 100px;
     border: 3px solid white;
     border-radius: 50%;
     z-index: 10;
@@ -254,14 +257,14 @@ body{
 }
 .profileGradient h1{
     margin: none;
-   font-size: 3vw;
+   font-size: 40px;
    background: -webkit-linear-gradient(#3494E6, #EC6EAD);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
 .footer{
     background: aliceblue;
-    width: 15vw;
+    width: 200px;
     height: 30vh;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -278,4 +281,19 @@ body{
     margin-left: -5vh;
     pointer-events: none;
     height: 44vh;
+}
+@media screen and (max-width:768px){
+    .nav--open{
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 40px;
+        height: 100px;
+    }
+    #title{
+        justify-self: center;
+        font-size: 32px;
+    }
+    #addplayer{
+        justify-self: center;
+        font-size: 16px;
+    }
 }
