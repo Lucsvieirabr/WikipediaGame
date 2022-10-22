@@ -157,13 +157,13 @@ body{
 }
 @keyframes profileGradientani {
     from{
-        width: 0vw;
-        height: 0vh;
+        width: 0px;
+        height: 0px;
         border: white;
     }
     to{
-        width: 7.5vw;
-        height: 15vh;
+        width: 105px;
+        height: 105px;
         border: 3px solid white;
     }
 }
@@ -233,7 +233,7 @@ body{
 .gradientBgPlayer{
     display: flex;
     background: linear-gradient(to bottom right , #306BFF, #1C3E93); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    width: 200px;
+    width: 225px;
     height: 14vh;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -247,8 +247,8 @@ body{
     justify-content: center;
     align-items: center;
     margin-top: 15vh;
-    width: 100px;
-    height: 100px;
+    width: 105px;
+    height: 105px;
     border: 3px solid white;
     border-radius: 50%;
     z-index: 10;
@@ -265,7 +265,7 @@ body{
 }
 .footer{
     background: aliceblue;
-    width: 200px;
+    width: 225px;
     height: 30vh;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
