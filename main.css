@@ -94,15 +94,16 @@ body{
 }
 @keyframes addplayer {
     from {
-        gap: 0vw;
+        display: flex;
+        flex-direction: column;
         height: 85vh;
+        align-items: center;
     }
     to {
         display: flex;
         flex-direction: row;
         height: 15vh;
         width: 100vw;
-        gap: 30vw;
     }
   }
 
